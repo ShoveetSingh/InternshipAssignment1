@@ -17,10 +17,13 @@ const Verify = () => {
           <input type="search" placeholder="Search" className="border-2 border-gray-300 rounded-md m-2 px-10 py-2 font-serif bg-gray-100"/>
         </div>
         <div className="px-10"></div>
+        <div className="py-4 px-8">
+        <img src="logo192.jpg" alt="logo" className="w-10 h-10 object-cover rounded-full"/>
+        </div>
       <button className="px-2 bg-pink-500 text-white font-semibold rounded-md m-3 font-serif text-sm">Upload</button>
       </div>
     </div>
   )
 }
-  
+    
 export default Verify  
