@@ -1,4 +1,5 @@
  import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -32,17 +33,23 @@ const Profile = () => {
               <img src="logo192.jpg" alt="Default" className="w-32 h-32 object-cover rounded-full" />
             </div>
           )}
-          <input type="file" id="fileInput" name="fileInput" accept="image/*" className="hidden" onChange={handleImageChange} />
+          <input type="file" id="fileInput" name="fileInput" accept="image/*" className="hidden" onChange={handleImageChange} required/>
           <label htmlFor="fileInput" className="bg-blue-500 hover:bg-blue-700 text-white font-bold  rounded cursor-pointer py-3 px-4">
             Choose Image
         </label>
         </div>  
         <div className = "sm:flex-row  md:px-96 py-8">
         <h1 className="font-bold text-lg font-serif">Add your location</h1>
-        <input type="text" className="border-2 border-gray-300 rounded-md m-2 px-4 py-2"/>
+        <input type="text" className="border-2 border-gray-300 rounded-md m-2 px-4 py-2" required/>
         <div className="flex flex-row p-2">
-        <button className="border-2 px-10 py-2  bg-pink-600 text-white  m-2 rounded-md font-semibold">Next</button>
-        <h1 className="text-gray-400 font-serif text-sm py-4">or press return</h1>
+        <button 
+        onClick={() => {window.location.href = '/Information'}}
+         className="border-2 px-10 py-2  bg-pink-600 text-white  m-2 rounded-md font-semibold">
+          Next
+          </button>
+        <h1 className="text-gray-400 font-serif text-sm py-4">or press 
+        <Link to='/Signup' className="text-pink-500"> to return</Link>
+        </h1>
         </div>        
         </div>
       </div>

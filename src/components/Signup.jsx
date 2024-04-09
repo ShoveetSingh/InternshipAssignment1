@@ -1,8 +1,11 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
-
+import {useNavigate} from 'react-router-dom'
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/Profile');
+  }
   return (
     <div className="flex md:flex-row sm:flex-col">
       <div className="relative">
@@ -20,11 +23,11 @@ const Signup = () => {
         <input type="email" placeholder="Email" required className="border-2 border-gray-300 rounded-md p-2 m-2 sm:w-3/4"/>
         <input type="password"  placeholder="Password" required className="border-2 border-gray-300 rounded-md p-2 m-2 sm:w-3/4"/></div>
         <div className="flex flex-row sm:px-16 sm:py-4">
-        <input type="checkbox" className="m-2"/>
+        <input type="checkbox" className="m-2" required/>
          I agree to the terms and conditions
         </div>
         <div>
-        <button className="bg-pink-600 text-white p-2 m-2 rounded-md font-semibold sm:w-full md:w-full">Create Account</button>
+        <button className="bg-pink-600 text-white p-2 m-2 rounded-md font-semibold sm:w-full md:w-full" onClick={handleClick}>Create Account</button>
         <div className=" flex flex-col text-sm p-4 px-8 font-semibold sm:px-16">
           <p>Already a member?
           <span className="text-sky-500">login</span>
