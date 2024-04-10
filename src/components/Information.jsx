@@ -19,6 +19,9 @@ const Information = () => {
     }
   }
 
+  const array =[['I am a designer looking to ',<br/>, 'share my work'], 'I am looking for a designer',['I am looking for design',<br/>, 'inspiration']]
+  const array2 = [['Showcase your work',<br/>,'and start working with us'],['Find designers to work with'],['With over 1 million from a vast community',<br/>,' of designer']];
+
   return (
     <div>
         <div className= "flex flex-row px-6 py-6">
@@ -31,17 +34,21 @@ const Information = () => {
           <h1 className="font-bold text-2xl font-serif">What brings you to dribble?</h1>
           <p1 className="font-serif font-semibold text-xs text-gray-500 py-2">Select the options that best describes you.Dont worry you can explore other options later</p1>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center py-10">
           <div className='flex flex-row justify-center items-center'>
       {[1, 2, 3].map((option) => (
         <div
+        relative
           key={option}
-          className={`option p-4 m-2 border border-gray-300 cursor-pointer ${
+          className={`option rounded-md p-4 m-2 border border-gray-300 cursor-pointer ${
             selectedOption === option ? 'border-pink-400' : ''
-          }`}
+          }`} 
           onClick={() => handleOptionClick(option)}
         >
-          Option {option}
+          <div className="text-sm font-bold font-serif">
+            <h1>{array[option-1]}</h1>
+            {selectedOption === option && <p1 className="text-xs font-normal italic text-gray-400">{array2[option - 1]}</p1>}
+          </div>
         </div>
       ))}
       </div>
