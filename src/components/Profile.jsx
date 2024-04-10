@@ -42,14 +42,20 @@ const Profile = () => {
         <h1 className="font-bold text-lg font-serif">Add your location</h1>
         <input type="text" className="border-2 border-gray-300 rounded-md m-2 px-4 py-2" required/>
         <div className="flex flex-row p-2">
-        <button 
-        onClick={() => {window.location.href = '/Information'}}
-         className="border-2 px-10 py-2  bg-pink-600 text-white  m-2 rounded-md font-semibold">
+        <button onClick={() => {window.location.href = '/Information'}}
+         className=
+         {`border-2 px-10 py-2  bg-pink-600 text-white  m-2 rounded-md font-semibold
+         ${
+          selectedImage ? 'bg-pink-600' : 'opacity-50 cursor-not-allowed'
+         }
+          
+         `}>
           Next
           </button>
         <h1 className="text-gray-400 font-serif text-sm py-4">or press 
         <Link to='/Signup' className="text-pink-500"> to return</Link>
         </h1>
+        
         </div>        
         </div>
       </div>
