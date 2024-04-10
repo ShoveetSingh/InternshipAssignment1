@@ -21,6 +21,7 @@ const Information = () => {
 
   const array =[['I am a designer looking to ',<br/>, 'share my work'], 'I am looking for a designer',['I am looking for design',<br/>, 'inspiration']]
   const array2 = [['Showcase your work',<br/>,'and start working with us'],['Find designers to work with'],['With over 1 million from a vast community',<br/>,' of designer']];
+  const array3 = ['kelly-sikkema-v9FQR4tbIq8-unsplash.jpg','luca-bravo-9l_326FISzk-unsplash.jpg','ricardo-gomez-angel-5YM26lUicfU-unsplash.jpg'];
 
   return (
     <div>
@@ -38,13 +39,13 @@ const Information = () => {
           <div className='flex flex-row justify-center items-center'>
       {[1, 2, 3].map((option) => (
         <div
-        relative
           key={option}
           className={`option rounded-md p-4 m-2 border border-gray-300 cursor-pointer ${
             selectedOption === option ? 'border-pink-400' : ''
           }`} 
           onClick={() => handleOptionClick(option)}
         >
+          <img src={array3[option-1]} alt="designer" className="w-40 h-40"/>
           <div className="text-sm font-bold font-serif">
             <h1>{array[option-1]}</h1>
             {selectedOption === option && <p1 className="text-xs font-normal italic text-gray-400">{array2[option - 1]}</p1>}
